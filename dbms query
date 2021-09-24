@@ -1,0 +1,18 @@
+create table PRODUCT_MASTER (product_no varchar(6)primary key,
+product_name varchar(20)NOT NULL,
+product_description varchar(50)not null,
+profit_percentage number(5,2),
+Quantity_on_hand number(10),
+reorder_no number(8)not null,
+sell_price number(8,2)not null,
+cost_price number(8,2)not null
+);
+
+create table CUSTOMER_MASTER(
+customer_no varchar(10)primary key,
+product_no varchar(6)references PRODUCT_MASTER,
+customer_name varchar(10)unique,
+customer_city varchar(20),
+customer_state varchar(20),
+balance number(10)    
+);
